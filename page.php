@@ -15,7 +15,7 @@
 			<th><a href="page.php?sort=itemid">Количество отзывов</a></th>
 		</tr>
 
-<?php
+<?php  // Сортировка столбцов таблицы
 	$sort = isset($_GET['sort'])?$_GET['sort']:null;
 
 	if($sort != 'title' && $sort != 'img' && $sort != 'date' && $sort != 'name' && $sort != 'itemid')
@@ -24,11 +24,10 @@
 	}
 ?>
 
-
-<?php
-	include "db.php";
-	$result = mysql_query("SELECT a.id, a.title, a.img, a.date, a.name, COUNT(r.itemid) as xz FROM main a  LEFT JOIN reviews r ON a.id = r.itemid group by a.id ORDER BY ".$sort);
-	while($myrow = mysql_fetch_array($result))
+<?php // Работа с таблицей
+	include "db.php"; // Поключение к БД
+	$result = mysql_query("SELECT a.id, a.title, a.img, a.date, a.name, COUNT(r.itemid) as xz FROM main a  LEFT JOIN reviews r ON a.id = r.itemid group by a.id ORDER BY ".$sort); // Извлечение всех значений, необходимых для заполнения полей таблицы из main, а также сумма строк отзывов (rating) по id каждого товара main из reviews
+	while($myrow = mysql_fetch_array($result)) // Цикл заполнения таблицы
 	{
 	echo
 		"<tr>

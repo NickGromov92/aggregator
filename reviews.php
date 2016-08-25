@@ -39,7 +39,7 @@
 			<th>Дата добавления</th>
 		</tr>
 
-<?php
+<?php // Работа с таблицей
 	$result1 = mysql_query("SELECT * FROM reviews WHERE itemid=$id"); // Извлечение значений для таблицы отзывов определённого товара
 	while($myrow1 = mysql_fetch_array($result1)) // Цикл заполнения полей таблицы
 	{
