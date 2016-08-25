@@ -16,21 +16,21 @@
 		</tr>
 
 <?php
-$sort = isset($_GET['sort'])?$_GET['sort']:null;
+	$sort = isset($_GET['sort'])?$_GET['sort']:null;
 
-if($sort != 'title' && $sort != 'img' && $sort != 'date' && $sort != 'name' && $sort != 'itemid')
-{
-	$sort = 'title';
-}
+	if($sort != 'title' && $sort != 'img' && $sort != 'date' && $sort != 'name' && $sort != 'itemid')
+	{
+		$sort = 'title';
+	}
 ?>
 
 
 <?php
-include "db.php";
-$result = mysql_query("SELECT a.id, a.title, a.img, a.date, a.name, COUNT(r.itemid) as xz FROM main a  LEFT JOIN reviews r ON a.id = r.itemid group by a.id ORDER BY ".$sort);
-while($myrow = mysql_fetch_array($result))
-{
-echo
+	include "db.php";
+	$result = mysql_query("SELECT a.id, a.title, a.img, a.date, a.name, COUNT(r.itemid) as xz FROM main a  LEFT JOIN reviews r ON a.id = r.itemid group by a.id ORDER BY ".$sort);
+	while($myrow = mysql_fetch_array($result))
+	{
+	echo
 		"<tr>
 			<td><a href='reviews.php?id=$myrow[id]'>$myrow[title]</a></td>
 			<td>$myrow[img]</td>
@@ -38,7 +38,7 @@ echo
 			<td>$myrow[name]</td>
 			<td>$myrow[5]</td>
 		</tr>";
-}
+	}
 ?>
 
 	</table>
