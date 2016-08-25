@@ -33,7 +33,7 @@
 	echo
 		"<tr>
 			<td><a href='reviews.php?id=$myrow[id]'>$myrow[title]</a></td>
-			<td>$myrow[img]</td>
+			<td><img src='$myrow[img]'></td>
 			<td>$myrow[date]</td>
 			<td>$myrow[name]</td>
 			<td>$myrow[5]</td>
