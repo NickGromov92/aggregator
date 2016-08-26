@@ -3,6 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Спасибо за Ваш отзыв!</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Arimo:400,700&subset=cyrillic" rel="stylesheet">
 </head>
 <body>
 
@@ -20,6 +22,8 @@
 		echo "<span>Ой! Произошла ошибка. Оставьте Ваш отзыв позже</span>"; // Хьюстон, у нас проблемы!
 	}
 ?>
+	<a href="page.php" class="btn">На главную</a>
+	<a href="reviews.php?id=<?php echo "$_GET[itemid]"; ?>" class="btn">На страницу товара</a>
 
 </body>
 </html>

@@ -3,6 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Добавление нового товара</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Arimo:400,700&subset=cyrillic" rel="stylesheet">
 </head>
 <body>
 
@@ -20,6 +22,8 @@
 		echo "<span>Внимание! Товар не добавлен!</span>";
 	}
 ?>
+	<a href="page.php" class="btn">На главную</a>
+	<a href="add-item.php" class="btn">Добавить ещё один</a>
 
 </body>
 </html>
